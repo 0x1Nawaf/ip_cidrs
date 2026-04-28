@@ -1,4 +1,4 @@
-# Saudi IPs (CIDR list)
+# IPs (CIDR list)
 
 ::
 
@@ -8,9 +8,9 @@
 
 - ipset (Linux):
 
-1. Create set: sudo ipset create saudi hash:net
+1. Create set: sudo ipset create ip`s hash:net
 
-2. Add entries: while read ip; do sudo ipset add saudi $ip; done < ips.list
+2. Add entries: while read ip; do sudo ipset add cidr $ip; done < ips.list
 
 3. Apply in iptables: sudo iptables -I INPUT -m set --match-set saudi src -j DROP
 
